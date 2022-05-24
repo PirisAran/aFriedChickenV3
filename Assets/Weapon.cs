@@ -22,17 +22,13 @@ public class Weapon : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(projectileChicken, ShotPoint.position, transform.rotation);
+                Instantiate(projectileChicken, ShotPoint.position, ShotPoint.rotation);
                 TimeBtwShots = StartTimeBtwShots;
             }
-            else
-            {
-                TimeBtwShots -= Time.deltaTime; 
-            }
         }
-        if (Input.GetMouseButtonDown(0))
+        else
         {
-            Instantiate(projectileChicken, ShotPoint.position, transform.rotation); 
+            TimeBtwShots -= Time.deltaTime;
         }
     }
 }

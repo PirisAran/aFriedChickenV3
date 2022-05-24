@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 309609246}
   - component: {fileID: 309609245}
   - component: {fileID: 309609247}
+  - component: {fileID: 309609248}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -227,7 +228,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309609244}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.069, y: -0.057, z: 0}
   m_LocalScale: {x: -0.4400128, y: 0.36734304, z: 1}
   m_Children:
@@ -250,7 +251,19 @@ MonoBehaviour:
   projectileChicken: {fileID: 1615163607970213481, guid: 843630ddeae47694fb99cdc00d9b65dc,
     type: 3}
   ShotPoint: {fileID: 397057231}
-  StartTimeBtwShots: 0.5
+  StartTimeBtwShots: 1
+--- !u!114 &309609248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309609244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492eff516cb630e4d9bccf515dc0f34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &397057230
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1045066683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +588,7 @@ GameObject:
   - component: {fileID: 1277360253}
   - component: {fileID: 1277360249}
   - component: {fileID: 1277360254}
+  - component: {fileID: 1277360255}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -677,7 +691,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -9057126880890962555, guid: 1aa310e3751fc1e44bf1bd98a8f9f096,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.14, y: 0.31}
@@ -733,6 +747,20 @@ MonoBehaviour:
   deathEffect: {fileID: 5500781359297328980, guid: 20180ee9cc93c9f43b80f054e389a5f4,
     type: 3}
   gameOverScreen: {fileID: 0}
+--- !u!114 &1277360255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277360247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178834020ad1eb6488d1c35f2b25e6e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crosshairs: {fileID: 1359246250}
+  player: {fileID: 164870808}
 --- !u!1 &1359246250
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +818,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a062d67ddd3f52245ac8dec939647304, type: 3}
-  m_Color: {r: 0.7490196, g: 0.14901961, b: 0.31764707, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -809,7 +837,7 @@ Transform:
   m_GameObject: {fileID: 1359246250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.27146852, y: 0.22260797, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -825,28 +853,13 @@ GameObject:
   - component: {fileID: 1375466844}
   - component: {fileID: 1375466843}
   - component: {fileID: 1375466842}
-  - component: {fileID: 1375466841}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1375466841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375466840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 178834020ad1eb6488d1c35f2b25e6e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crosshairs: {fileID: 1359246250}
-  player: {fileID: 164870808}
 --- !u!81 &1375466842
 AudioListener:
   m_ObjectHideFlags: 0

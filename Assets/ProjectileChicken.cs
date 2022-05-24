@@ -13,13 +13,13 @@ public class ProjectileChicken : MonoBehaviour
     public GameObject destroyEffect;
     void Start()
     {
-        Invoke("DestroyProjectile",lifeTime);
+      //  Invoke("DestroyProjectile",lifeTime);
     }
 
     void Update()
     {
 
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position,transform.up, distance, whatIsSolid);
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position,transform.right, distance, whatIsSolid);
         if (hitInfo.collider != null)
         {
             if (hitInfo.collider.CompareTag("Enemy"))
@@ -32,7 +32,7 @@ public class ProjectileChicken : MonoBehaviour
 
         }
 
-        transform.Translate(transform.up * speed * Time.deltaTime); 
+        transform.Translate(transform.right * speed * Time.deltaTime,Space.World); 
     }
 
     void DestroyProjectile()
