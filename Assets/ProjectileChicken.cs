@@ -13,7 +13,7 @@ public class ProjectileChicken : MonoBehaviour
     public GameObject destroyEffect;
     void Start()
     {
-      //  Invoke("DestroyProjectile",lifeTime);
+        Invoke("DestroyProjectile",lifeTime);
     }
 
     void Update()
