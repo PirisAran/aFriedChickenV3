@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponRotation : MonoBehaviour
+public class WeaponPosition : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float rotationZ;
-    public float rotationX;
-    public Vector3 vector = new Vector3(0, 0, 0);
-    
+    public GameObject Player;
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(vector);
+        transform.position = Player.transform.position;
     }
 }
