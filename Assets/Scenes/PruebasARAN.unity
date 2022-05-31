@@ -145,7 +145,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164870808}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.359, y: -0.079, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 309609246}
   - component: {fileID: 309609245}
   - component: {fileID: 309609247}
-  - component: {fileID: 309609248}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -266,18 +265,6 @@ MonoBehaviour:
     type: 3}
   ShotPoint: {fileID: 397057231}
   StartTimeBtwShots: 1
---- !u!114 &309609248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309609244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 492eff516cb630e4d9bccf515dc0f34f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &397057230
 GameObject:
   m_ObjectHideFlags: 0

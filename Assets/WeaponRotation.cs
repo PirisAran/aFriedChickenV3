@@ -6,24 +6,18 @@ public class WeaponRotation : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    float rotationZ;
+    public float rotationZ;
+    public float rotationX;
+    public Vector3 vector = new Vector3(0, 0, 0);
+    
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        rotationZ = transform.parent.rotation.z;
-
-        if (rotationZ > 90.0f && rotationZ < 180.0f)
-        {
-            transform.parent.rotation.Set(180, 0, rotationZ, 0);
-        }
-        else
-        {
-            transform.parent.rotation.Set(0, 0, rotationZ, 0);
-        }
+        transform.Rotate(vector);
     }
 }
