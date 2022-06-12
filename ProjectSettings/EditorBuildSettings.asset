@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuInicial.unity
     guid: 7e052e23980feac419b61cf36831ed97
   - enabled: 1
-    path: Assets/Scenes/PruebasARAN.unity
-    guid: 781439e562ac24743b049fc8001bf7f6
-  - enabled: 1
-    path: Assets/Scenes/Catcombs2.unity
-    guid: 797f62208e94b2e4eac5c07bb4e761d8
+    path: Assets/Scenes/PRUEVAS_GAME.unity
+    guid: 3e124ed3885c3e34a957386f40faedc8
   m_configObjects: {}

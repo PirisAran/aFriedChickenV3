@@ -108908,7 +108908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 358548322}
   player: {fileID: 1930698356}
-  threshold: 2.23
+  threshold: 0.7
 --- !u!4 &1590526010
 Transform:
   m_ObjectHideFlags: 0
