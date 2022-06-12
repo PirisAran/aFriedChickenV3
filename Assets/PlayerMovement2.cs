@@ -9,10 +9,19 @@ public class PlayerMovement2 : MonoBehaviour
     private Rigidbody2D playerRb;
     private Vector2 moveInput;
     private Animator playerAnimator;
+
+    private SoundManager soundManager;
+
+    private void Awake()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+
+
     }
 
     void Update()
@@ -27,6 +36,7 @@ public class PlayerMovement2 : MonoBehaviour
         playerAnimator.SetFloat("Vertical", moveY);
         playerAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
 
+        
     }
 
     private void FixedUpdate()
@@ -34,6 +44,11 @@ public class PlayerMovement2 : MonoBehaviour
         //Físicas
 
         playerRb.MovePosition(playerRb.position + moveInput * speed * Time.fixedDeltaTime);
+
+        if (speed != 0)
+        {
+            soundManager.SetAudio(0, 0.5f);
+        }
     }
 }
 

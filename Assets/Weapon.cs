@@ -10,7 +10,12 @@ public class Weapon : MonoBehaviour
     private float TimeBtwShots;
     public float StartTimeBtwShots;
 
+    private SoundManager soundManager;
 
+    private void Awake()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
     void Start()
     {
         
@@ -23,6 +28,9 @@ public class Weapon : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Instantiate(projectileChicken, ShotPoint.position, ShotPoint.rotation);
+
+                soundManager.SetAudio(4, 0.5f);
+
                 TimeBtwShots = StartTimeBtwShots;
             }
         }
