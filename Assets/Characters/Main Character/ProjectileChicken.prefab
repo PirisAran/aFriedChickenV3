@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6596089654036720773}
   - component: {fileID: 8711336146518940609}
   - component: {fileID: 2150030996406356033}
+  - component: {fileID: 5632571114064754358}
   m_Layer: 0
   m_Name: ProjectileChicken
   m_TagString: Untagged
@@ -104,3 +105,17 @@ MonoBehaviour:
   damage: 1
   destroyEffect: {fileID: 5739176450703373454, guid: 2af88066555108841a335683a01df109,
     type: 3}
+--- !u!114 &5632571114064754358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615163607970213481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356f631d9e042894d92b499830f8ddb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 4
+  knockTime: 0.4
