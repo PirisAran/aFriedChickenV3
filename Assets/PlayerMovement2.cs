@@ -43,7 +43,7 @@ public class PlayerMovement2 : MonoBehaviour
         playerAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
 
 
-        CheckParticle();
+        //CheckParticle();
 
 
     }
@@ -61,16 +61,20 @@ public class PlayerMovement2 : MonoBehaviour
         SoundManager.PlaySound("Player_Footstep", audioSource1);
     }
 
-    private void CheckParticle()
-    {
-        if (speed != 0)
-        {
-            dust.Play();
-        }
-        else
-        {
-            dust.Pause();
-        }
-    }
+    //private void CheckParticle()
+    //{
+    //    if (speed != 0)
+    //    {
+    //        dust.Play();
+    //    }
+    //    else
+    //    {
+    //        dust.Pause();
+    //    }
+    //}
+
+    private void PlayParticle() => dust.Play();
+
+    private void StopParticle() => dust.Stop();
 }
 

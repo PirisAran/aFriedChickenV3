@@ -19949,7 +19949,7 @@ MonoBehaviour:
   projectileChicken: {fileID: 1615163607970213481, guid: 843630ddeae47694fb99cdc00d9b65dc,
     type: 3}
   ShotPoint: {fileID: 397057231}
-  StartTimeBtwShots: 1
+  StartTimeBtwShots: 0.6
 --- !u!1 &397057230
 GameObject:
   m_ObjectHideFlags: 0
@@ -21790,7 +21790,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 15
       minScalar: 10
       maxCurve:
         serializedVersion: 2
