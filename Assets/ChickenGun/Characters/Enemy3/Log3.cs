@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Log3 : Enemy3AI
 {
+    [SerializeField] AudioSource audioSource1;
+    [SerializeField] AudioSource audioSource2;
+    
     private Rigidbody2D myRigidBody;
     private SpriteRenderer mySpriteRenderer;
     public Transform target;
@@ -34,14 +37,14 @@ public class Log3 : Enemy3AI
     {
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
-                Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 
             changeAnim(temp - transform.position);
-                myRigidBody.MovePosition(temp);
-                ChangeState(EnemyState.walk);
+            myRigidBody.MovePosition(temp);
+            ChangeState(EnemyState.walk);
             anim.SetBool("wakeUp", true);
-           
-           
+
+            SoundManager.PlaySound("Witch_Bye", audioSource1);
 
 
         }
@@ -49,6 +52,8 @@ public class Log3 : Enemy3AI
         {
             ChangeState(EnemyState.idle);
             anim.SetBool("wakeUp", false);
+
+            SoundManager.PlaySound("Witch_Hello", audioSource2);
         }
 
     }

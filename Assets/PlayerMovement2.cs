@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement2 : MonoBehaviour
 {
-    
+    [SerializeField] AudioSource audioSource1;
+    [SerializeField] AudioSource audioSource2;
+
     public float speed = 0;
     private Rigidbody2D playerRb;
     private Vector2 moveInput;
@@ -47,8 +49,15 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (speed != 0)
         {
-            soundManager.SetAudio(0, 0.5f);
+            //soundManager.SetAudio(0, 0.5f);
+
+            //SoundManager.PlaySound("Weapon_Shot", audioSource1);
         }
+    }
+
+    private void WalkSound()
+    {
+        SoundManager.PlaySound("Player_Footstep", audioSource1);
     }
 }
 
