@@ -13,7 +13,7 @@ public class CameraTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos = cam.ScreenToViewportPoint(Input.mousePosition);
+        Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 targetPos=(player.position + mousePos)/2f;
         
         targetPos.x = Mathf.Clamp(targetPos.x,-threshold+ player.position.x, threshold+ player.position.x);
