@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player_Teleport : MonoBehaviour
 {
+    [SerializeField] AudioSource audioSource1;
+
     private GameObject currentTeleporter;
     
     // Update is called once per frame
@@ -14,6 +16,7 @@ public class Player_Teleport : MonoBehaviour
             if(currentTeleporter != null)
             {
                 transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
+                SoundManager.PlaySound("Stairs", audioSource1);
             }
         }
     }
