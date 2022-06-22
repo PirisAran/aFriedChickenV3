@@ -47,7 +47,7 @@ public class Log3 : Enemy3AI
             anim.SetBool("wakeUp", true);
             anim.SetBool("attack", false);
 
-            SoundManager.PlaySound("Witch_Bye", audioSource1);
+            //SoundManager.PlaySound("Witch_Bye", audioSource1);
 
 
         }
@@ -56,7 +56,7 @@ public class Log3 : Enemy3AI
             ChangeState(EnemyState.idle);
             anim.SetBool("wakeUp", false);
 
-            SoundManager.PlaySound("Witch_Hello", audioSource2);
+            //SoundManager.PlaySound("Witch_Hello", audioSource2);
         }
         else if (Vector3.Distance(target.position, transform.position) <= attackRadius)
         {
