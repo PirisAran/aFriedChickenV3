@@ -27,6 +27,7 @@ public class EnemyLife : MonoBehaviour
             
 
             Destroy(gameObject);
+            
         }
         
     }
