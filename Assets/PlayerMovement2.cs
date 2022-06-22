@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class PlayerMovement2 : MonoBehaviour
 {
-    
+    [SerializeField] AudioSource audioSource1;
+    [SerializeField] AudioSource audioSource2;
+
     public float speed = 0;
     private Rigidbody2D playerRb;
     private Vector2 moveInput;
     private Animator playerAnimator;
+    public ParticleSystem dust;
+
 
     private SoundManager soundManager;
+    
 
     private void Awake()
     {
         soundManager = FindObjectOfType<SoundManager>();
+        dust = FindObjectOfType<ParticleSystem>();
     }
     void Start()
     {
@@ -36,7 +42,10 @@ public class PlayerMovement2 : MonoBehaviour
         playerAnimator.SetFloat("Vertical", moveY);
         playerAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
 
-        
+
+        //CheckParticle();
+
+
     }
 
     private void FixedUpdate()
@@ -45,10 +54,27 @@ public class PlayerMovement2 : MonoBehaviour
 
         playerRb.MovePosition(playerRb.position + moveInput * speed * Time.fixedDeltaTime);
 
-        if (speed != 0)
-        {
-            soundManager.SetAudio(0, 0.5f);
-        }
     }
+
+    private void WalkSound()
+    {
+        SoundManager.PlaySound("Player_Footstep", audioSource1);
+    }
+
+    //private void CheckParticle()
+    //{
+    //    if (speed != 0)
+    //    {
+    //        dust.Play();
+    //    }
+    //    else
+    //    {
+    //        dust.Pause();
+    //    }
+    //}
+
+    private void PlayParticle() => dust.Play();
+
+    private void StopParticle() => dust.Stop();
 }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ProjectileChicken : MonoBehaviour
 {
+    [SerializeField] AudioSource audioSource1;
+
     public float speed;
     public float lifeTime;
     public float distance;
@@ -14,6 +16,8 @@ public class ProjectileChicken : MonoBehaviour
     void Start()
     {
         Invoke("DestroyProjectile",lifeTime);
+
+        SoundManager.PlaySound("Weapon_Shot", audioSource1);
     }
 
     void Update()

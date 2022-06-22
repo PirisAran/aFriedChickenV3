@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 1717534877}
   - component: {fileID: 1717534876}
   - component: {fileID: 1717534875}
+  - component: {fileID: 1717534878}
   m_Layer: 8
   m_Name: Enemy3
   m_TagString: Enemy
@@ -460,19 +461,35 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003596425, y: -0.080393076}
+  m_Offset: {x: -0.003596425, y: -0.020766228}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.4}
+    pivot: {x: 0.5337142, y: 0.34504014}
+    oldSize: {x: 0.37, y: 0.46}
     newSize: {x: 0.23, y: 0.18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.14008975, y: 0.16092622}
+  m_Size: {x: 0.14008975, y: 0.28017992}
   m_EdgeRadius: 0
+--- !u!114 &1717534878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717534871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9289ced957f75504e8795bab3b2fea06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  deathEffect: {fileID: 5500781359297328980, guid: 20180ee9cc93c9f43b80f054e389a5f4,
+    type: 3}
+  damageEffect: {fileID: 0}
 --- !u!1 &2104601298
 GameObject:
   m_ObjectHideFlags: 0
