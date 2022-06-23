@@ -18,8 +18,7 @@ public class Projectile : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         target = new Vector2(player.position.x, player.position.y);
-
-
+             
     }
 
     void Update()
@@ -52,6 +51,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            player.GetComponent<PlayerLife>().TakeDamagePlayer(damage);
             DestroyProjectile();
         }
     }

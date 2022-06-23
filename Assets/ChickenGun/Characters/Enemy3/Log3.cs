@@ -14,15 +14,15 @@ public class Log3 : Enemy3AI
     public float attackRadius;
     public Transform homePosition;
     public Animator anim;
-
+    public int damage;
     void Start()
-    {
+    { 
         currentState = EnemyState.idle;
         mySpriteRenderer = GetComponent<SpriteRenderer>();  
         anim = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
-
+        
     }
 
     // Update is called once per frame
@@ -31,6 +31,8 @@ public class Log3 : Enemy3AI
         CheckDistance();
         //if (currentState == EnemyState.walk)
         //    SetFlipX();
+        
+        
     }
 
     void CheckDistance()
@@ -43,17 +45,28 @@ public class Log3 : Enemy3AI
             myRigidBody.MovePosition(temp);
             ChangeState(EnemyState.walk);
             anim.SetBool("wakeUp", true);
+            anim.SetBool("attack", false);
 
-            SoundManager.PlaySound("Witch_Bye", audioSource1);
+            //SoundManager.PlaySound("Witch_Bye", audioSource1);
 
 
         }
-        if (Vector3.Distance(target.position, transform.position) > chaseRadius)
+        else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
         {
             ChangeState(EnemyState.idle);
             anim.SetBool("wakeUp", false);
 
-            SoundManager.PlaySound("Witch_Hello", audioSource2);
+            //SoundManager.PlaySound("Witch_Hello", audioSource2);
+        }
+        else if (Vector3.Distance(target.position, transform.position) <= attackRadius)
+        {
+            //if (currentState == EnemyState.idle && currentState == EnemyState.walk)
+            //{
+
+            //}
+            AttackCo();
+            currentState = EnemyState.walk;
+
         }
 
     }
@@ -99,6 +112,18 @@ public class Log3 : Enemy3AI
         {
             currentState = newState;
         }
+    }
+
+    public void AttackCo()
+    {
+        currentState = EnemyState.attack;
+        anim.SetBool("attack", true);
+    }
+
+    public void DealDamage()
+    {
+            target.GetComponent<PlayerLife>().TakeDamagePlayer(damage);
+
     }
 
     //private void SetFlipX()
