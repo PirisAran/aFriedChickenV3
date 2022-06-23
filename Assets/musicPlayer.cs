@@ -5,6 +5,8 @@ using UnityEngine;
 public class musicPlayer : MonoBehaviour
 {
     [SerializeField] AudioSource musicSource;
+    public float time = 60f;
+    public float DeltaTime=0f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +18,11 @@ public class musicPlayer : MonoBehaviour
     void Update()
     {
         
+        DeltaTime += Time.deltaTime;
+        if (DeltaTime > time)
+        {
+            SoundManager.PlaySound("Music", musicSource);
+
+        }
     }
 }
