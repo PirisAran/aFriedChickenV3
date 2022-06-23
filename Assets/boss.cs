@@ -10,12 +10,16 @@ public class boss : MonoBehaviour
     [SerializeField] GameObject projectil;
     [SerializeField] GameObject player;
 
+    [SerializeField] GameObject enemy1;
+    [SerializeField] GameObject enemy2;
+
     private int attackAngle;
 
     private Vector3 vectorBossPlayer;
     private Vector3 vectorBPNormalized;
 
     [SerializeField] float vectorMultiplier;
+
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +75,7 @@ public class boss : MonoBehaviour
             projectil.GetComponent<boss_projectile>().target = newDirection.normalized;
 
             Instantiate(projectil, transform.position + vectorBPNormalized * vectorMultiplier, Quaternion.identity);
+            Instantiate(enemy2, transform.position, Quaternion.identity);
         }
     }
 
@@ -86,18 +91,7 @@ public class boss : MonoBehaviour
             projectil.GetComponent<boss_projectile>().target = newDirection.normalized;
 
             Instantiate(projectil, transform.position, Quaternion.identity);
+            Instantiate(enemy1, transform.position, Quaternion.identity);
         }
     }
-
-    public GameObject GetPlayer()
-    {
-        return player;
-    }
-
-    public Vector3 GetBossTransformPosition()
-    {
-        return transform.position;
-    }
-
-
 }
