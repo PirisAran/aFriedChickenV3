@@ -8,6 +8,10 @@ public class EnemyLife : MonoBehaviour
     public GameObject deathEffect;
     public GameObject damageEffect;
 
+    public bool isBoss;
+
+    private bool boolean = false;
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -23,12 +27,23 @@ public class EnemyLife : MonoBehaviour
     {
         if (health<=0)
         {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-            
+            if (!isBoss)
+            {
+                Instantiate(deathEffect, transform.position, Quaternion.identity);
 
-            Destroy(gameObject);
-            
+
+                Destroy(gameObject);
+            }
+            else
+            {
+                boolean = true;
+            }
         }
         
+    }
+
+    public bool IsDead()
+    {
+        return boolean;
     }
 }
