@@ -17,12 +17,15 @@ public class musicPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        while(DeltaTime <= time && DeltaTime > -1)
+        {
+            DeltaTime += Time.deltaTime;
+        }
         
-        DeltaTime += Time.deltaTime;
-        if (DeltaTime > time)
+        if (DeltaTime >= time)
         {
             SoundManager.PlaySound("Music", musicSource);
-
+            DeltaTime = -10f;
         }
     }
 }
