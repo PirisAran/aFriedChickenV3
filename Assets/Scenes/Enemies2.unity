@@ -203,6 +203,7 @@ MonoBehaviour:
   deathEffect: {fileID: 5500781359297328980, guid: 20180ee9cc93c9f43b80f054e389a5f4,
     type: 3}
   damageEffect: {fileID: 0}
+  isBoss: 0
 --- !u!61 &289641778
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -455,6 +456,7 @@ MonoBehaviour:
   deathEffect: {fileID: 7451623488141442561, guid: 0f9d9223358d73748b9e68d4d1a0b780,
     type: 3}
   damageEffect: {fileID: 0}
+  isBoss: 0
 --- !u!70 &1045066688
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -596,6 +598,7 @@ MonoBehaviour:
   deathEffect: {fileID: 5500781359297328980, guid: 20180ee9cc93c9f43b80f054e389a5f4,
     type: 3}
   damageEffect: {fileID: 0}
+  isBoss: 0
 --- !u!212 &1613746894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -780,7 +783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717534871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.024, y: 1.019, z: 0}
+  m_LocalPosition: {x: 14.6, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
